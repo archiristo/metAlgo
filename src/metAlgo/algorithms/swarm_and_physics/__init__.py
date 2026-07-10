@@ -1,0 +1,6 @@
+from .ant_colony import AntColonyOptimization
+from .bio_inspired_meta import FireflyAlgorithm
+from .bio_inspired_meta import ArtificialBeeColony
+from .bio_inspired_meta import FishSwarm
+from .differential_evolution import DifferentialEvolution
+from .particle_swarm import ParticleSwarmOptimization
