@@ -1,5 +1,7 @@
-numpy>=1.26.0
-matplotlib>=3.9.0
-opencv-python>=4.10.0
-pytest>=8.3.4
-scipy>=1.12.0
+numpy
+matplotlib
+opencv-python
+pytest
+scipy
+flake8
+pytest-cov
