@@ -54,6 +54,7 @@ class ParticleSwarmOptimization(BaseAlgorithm):
         self.velocities = (self.w * self.velocities) + cognitive + social
         self.positions = self.positions + self.velocities
         self.positions = np.clip(self.positions, bounds[:, 0], bounds[:, 1])
+        self.fitness = np.array([self.problem.evaluate(p) for p in self.positions])
         improved_mask = self.fitness < self.pbest_fitness
         self.pbest_fitness[improved_mask] = self.fitness[improved_mask]
         self.pbest_positions[improved_mask] = self.positions[improved_mask].copy()
