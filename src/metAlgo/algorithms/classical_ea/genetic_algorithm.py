@@ -39,7 +39,10 @@ class GeneticAlgorithm(BaseAlgorithm):
         self.best_solution = self.population[min_idx].copy()
 
     def step(self) -> Tuple[np.ndarray, float]:
-        new_pop = np.empty_like(self.population)
+        new_pop = []
+        elite_indices = np.argsort(self.fitness)[:self.elitism_count]
+        for idx in elite_indices:
+            new_pop.append(self.population[idx].copy())
         current_idx = 0
         if self.elitism_count > 0:
             elite_indices = np.argsort(self.fitness)[:self.elitism_count]
